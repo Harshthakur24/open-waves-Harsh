@@ -33,6 +33,7 @@
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+    --slide-speed: 36s;
 
   }
 
@@ -64,6 +65,7 @@
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
+    --slide-speed: 36s;
   }
 }
 
@@ -168,6 +170,67 @@
 
   }
 
+  #rotatingText {
+    animation-name: rotate-circle;
+    animation-duration: 10s;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 
+  @keyframes rotate-circle {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  .text {
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: "Kanit", sans-serif;
+
+    font-size: 13px;
+    /* fill: #fff4f4; */
+    /* text-shadow: 2px 0px #ccc; */
+  }
+
+  .slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+
+  }
+
+  .slider .inner_slider {
+    /* width: min-content; */
+
+    animation: slide var(--slide-speed) var(--animation-direction, forwards) linear infinite;
+  }
+
+  .slider[data-direction="right"] {
+    --animation-direction: reverse;
+  }
+
+  .slider[data-direction="left"] {
+    --animation-direction: forwards;
+  }
+
+
+  .inner_slider:hover {
+    animation-play-state: paused;
+  }
+
+  .slide_item {
+    transition: filter 0.5s;
+  }
+
+  @keyframes slide {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+
+  }
 
 }
