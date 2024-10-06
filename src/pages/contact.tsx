@@ -66,8 +66,8 @@ const page = () => {
     }
   };
   return (
-    <section className="w-full h-full lg:overflow-hidden pt-20">
-      <div className="xl:max-container w-full h-full   ">
+    <main className="w-full h-full lg:overflow-hidden pt-20">
+      <section className="xl:max-container w-full h-full   ">
         <div className="">
           <div className="flex flex-col gap-5 justify-center items-start max-md:px-4 md:items-center">
             <div className="px-5 py-2 bg-red-50 rounded-3xl text-red-700">
@@ -172,31 +172,33 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
-      <Slider direction="right" className=" flex gap-10 items-center">
-        {sliderArray.map((item, index) => (
-          <Slide key={index}>
-            {item.type === "text" ? (
-              <h5 className="text-3xl uppercase whitespace-nowrap">
-                {item.text}
-              </h5>
-            ) : (
-              <div className="w-24 ">
-                <Image
-                  src={item.url || ""}
-                  alt=""
-                  width={50}
-                  height={50}
-                ></Image>
-              </div>
-            )}
-          </Slide>
-        ))}
-      </Slider>
-      <div className="py-20 w-full h-[500px]">
+      </section>
+      <section>
+        <Slider direction="right" className=" flex gap-10 items-center">
+          {sliderArray.map((item, index) => (
+            <Slide key={index}>
+              {item.type === "text" ? (
+                <h5 className="text-3xl uppercase whitespace-nowrap">
+                  {item.text}
+                </h5>
+              ) : (
+                <div className="w-24 ">
+                  <Image
+                    src={item.url || ""}
+                    alt=""
+                    width={50}
+                    height={50}
+                  ></Image>
+                </div>
+              )}
+            </Slide>
+          ))}
+        </Slider>
+      </section>
+      <section className="py-20 w-full h-[500px]">
         <MapBox />
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 

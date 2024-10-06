@@ -196,16 +196,17 @@
   }
 
   .slider {
-    position: relative;
-    width: 100%;
     overflow: hidden;
+
+    background: white;
     white-space: nowrap;
+    position: relative;
 
   }
 
   .slider .inner_slider {
     /* width: min-content; */
-
+    /* display: inline-block; */
     animation: slide var(--slide-speed) var(--animation-direction, forwards) linear infinite;
   }
 
@@ -218,7 +219,7 @@
   }
 
 
-  .inner_slider:hover {
+  .slider:hover .inner_slider {
     animation-play-state: paused;
   }
 
@@ -227,10 +228,27 @@
   }
 
   @keyframes slide {
+    from {
+      transform: translate(0);
+    }
+
     to {
-      transform: translate(calc(-50% - 0.5rem));
+      transform: translate(-100%);
+      ;
     }
 
   }
 
+  .mask {
+    mask-image: linear-gradient(to right, transparent, #FFFF, transparent);
+  }
+
+
+
+}
+
+@layer utilities {
+ 
+
+ 
 }

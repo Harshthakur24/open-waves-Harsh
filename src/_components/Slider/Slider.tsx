@@ -27,12 +27,14 @@ export const Slider: React.FC<Props> = ({
           } as React.CSSProperties
         }
         data-direction={direction}
-        className={cn("slider")}
+        className={cn("slider flex")}
       >
-        <div className={cn("flex p-4 inner_slider ", className)}>
+        <div className={cn("inner_slider ", className)}>
           {slides.map((slide, index) => (
             <React.Fragment key={`slide-${index}`}>{slide}</React.Fragment>
           ))}
+        </div>
+        <div className={cn(" inner_slider ", className)}>
           {slides.map((slide, index) => (
             <React.Fragment key={`slide-duplicate-${index}`}>
               {slide}
