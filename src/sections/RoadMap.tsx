@@ -31,7 +31,7 @@ const roadmaps: {
 
 export function RoadMap() {
   return (
-    <section className="pt-24 ">
+    <section className="pt-24">
       <div className="w-full xl:max-container px-4 max-sm:px-3">
         <div className=" flex w-full overflow bg-[#281F32] justify-center relative rounded-md p-10 lg:p-12 z-1 max-sm:flex-col max-sm:p-10">
           <motion.div
@@ -55,7 +55,7 @@ export function RoadMap() {
           <div className="flex flex-col xl:flex-row w-full">
             <div className="flex flex-col items-start justify-between w-[17%] max-md:ml-0 max-md:w-full">
               <div className=" text-white max-md:mt-10 max-sm:mt-2">
-                <div className="text-sm font-medium leading-4 text-red-500 uppercase tracking-[5px]">
+                <div className="text-medium font-bold leading-4 text-red-500 uppercase tracking-[5px]">
                   Our Model
                 </div>
                 <motion.div
@@ -67,15 +67,15 @@ export function RoadMap() {
                     stiffness: 100,
                     damping: 20,
                   }}
-                  className="mt-7 text-6xl font-bold tracking-tighter whitespace-nowrap max-md:text-4xl"
+                  className="mt-7 text-4xl font-bold tracking-tighter whitespace-nowrap max-md:text-4xl"
                 >
                   How we do
                 </motion.div>
-                <p className="mt-8 text-lg text-wrap whitespace-nowrap">
+                <p className="mt-8 text-base text-wrap whitespace-nowrap">
                   Save time and money with <br /> our powerful method.
                 </p>
                 <div className="flex gap-3 justify-center mr-28 px-4 py-3 mt-10 xl:mt-60 text-lg leading-7 bg-red-700 rounded-[30px] text-stone-50 max-md:px-6 max-sm:py-4 max-md:mt-10 max-sm:whitespace-nowrap">
-                  <div className="flex-auto text-center">Learn More</div>
+                  <div className="flex-auto text-center w-24">Learn More</div>
                 </div>
               </div>
             </div>
@@ -98,7 +98,9 @@ export function RoadMap() {
                     <div
                       className={cn(
                         " absolute sm:hidden bg-no-repeat h-[6px] z-[1] w-64 bg-cover top-1/2 bg-line max-sm:w-40 max-sm:right-[-50px] ",
-                        index % 2 !== 0 ? "rotate-180 mt-28 -left-14" : "right-[-100px] "
+                        index % 2 !== 0
+                          ? "rotate-180 mt-28 -left-14"
+                          : "right-[-100px] "
                       )}
                     >
                       <Image

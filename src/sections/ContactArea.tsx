@@ -12,7 +12,7 @@ export type Formdata = {
 
 export function ContactArea() {
   return (
-    <section className="">
+    <section className="scale-90">
       <div className="flex max-container xl:space-x-10 max-sm:space-x-0 mb-40 flex-col xl:flex-row md:gap-10 xl:gap-0">
         <Form />
         <div className="flex flex-col md:flex-row gap-10 xl:w-full">

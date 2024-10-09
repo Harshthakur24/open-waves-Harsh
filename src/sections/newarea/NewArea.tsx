@@ -6,15 +6,16 @@ export function NewsArea() {
       <div className="max-container">
         <div className="flex  justify-around  items-end  mb-[70px] max-sm:flex-col">
           <div className="max-sm:mb-5">
-            <h5 className="mb-5 text-sm tracking-widest text-blue-500 uppercase">
+            <h5 className="mb-5 text-sm ml-2 font-bold tracking-widest text-blue-500 uppercase">
               Interesting Articles
             </h5>
             <h1 className="  tracking-[-1px] leading-[56px] font-bold text-5xl max-sm:leading-[44px]">
-              Read daily news about <br /> startup companies
+              Read daily news about <br />{" "}
+              <span className="text-blue-600">startup companies</span>
             </h1>
           </div>
           <div className="flex">
-            <p className=" pb-2 text-xl text-center  leading-7 max-w-[655px] max-sm:text-left ">
+            <p className=" pb-2 text-sn text-center  leading-7 max-w-[655px] max-sm:text-left ">
               In todays rapidly evolving world, technology is constantly shaping
               the way we live and interact. From artificial intelligence and
               automation to virtual reality, the pace of technological
@@ -33,7 +34,7 @@ export function NewsArea() {
             />
           </div>
           <div className=" pt-2 pr-20 max-sm:pr-10">
-            <h5 className=" text-blue-500 mb-5 text-sm tracking-widest font-medium">
+            <h5 className=" text-blue-500 mb-5 text-md tracking-widest font-medium">
               Mobile Development
             </h5>
             <h1 className=" text-white text-3xl leading-9 font-medium mb-6 -tracking-tight max-sm:tracking-normal ">
@@ -65,7 +66,8 @@ export function NewsArea() {
   );
 }
 
-{/* <div className="pt-6 gap-6 flex items-start max-sm:flex-col">
+{
+  /* <div className="pt-6 gap-6 flex items-start max-sm:flex-col">
   <div className="flex-1 bg-red-50 rounded-lg  pt-[24px] px-[22px] pb-[113px] relative overflow-hidden max-sm:px-[10px]">
     <div className=" overflow-hidden mb-12">
       <Image
@@ -162,4 +164,5 @@ export function NewsArea() {
       </a>
     </div>
   </div>
-</div> */}
+</div> */
+}

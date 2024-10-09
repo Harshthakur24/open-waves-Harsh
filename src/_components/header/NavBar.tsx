@@ -1,13 +1,8 @@
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { Menu2 } from "@/lib/Menu2";
-import { ChevronDown } from "lucide-react";
-import { Menu0 } from "./Menu0";
-import { Menu3 } from "./Menu3";
-import { Menu1 } from "./Menu1";
+import { useState, useEffect } from "react";
 import clsx from "clsx";
+import Link from "next/link";
 
-const NavLinks: { id: number; service: string }[] = [
+const NavLinks = [
   {
     id: 1,
     service: "Home",
@@ -18,7 +13,7 @@ const NavLinks: { id: number; service: string }[] = [
   },
   {
     id: 3,
-    service: "PortFolio",
+    service: "Portfolio",
   },
   {
     id: 4,
@@ -27,56 +22,103 @@ const NavLinks: { id: number; service: string }[] = [
 ];
 
 export function NavBar() {
-  const menuRef = useRef(null);
-  const [hovering, setHovering] = useState<number | null>(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  
-  const [isLayoutOpen, setIsLayoutOpen] = useState<boolean>(false);
+  // Handle scroll behavior for showing/hiding navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isScrollingUp = prevScrollPos > currentScrollPos;
 
-  const handleMouseEnter = (id: number) => {
-    console.log(id);
-    setHovering(id);
-    setIsMenuOpen(true);
-  };
-  const handleMouseLeave = () => {
-    setIsMenuOpen(false);
-    setHovering(null);
-  };
-  const handleMenuMouseEnter = () => {
-    setHovering(hovering);
+      setIsVisible(isScrollingUp || currentScrollPos < 270);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav onMouseEnter={() => setHovering(null)}>
-      <ul className="hidden lg:flex xl:flex-row gap-10 list-none -z-10 max-sm:hidden">
-        {NavLinks.map((navlink) => (
-          <li
-            
-            key={navlink.id}
-            onMouseEnter={(event) => handleMouseEnter(navlink.id)}
-            onMouseLeave={(event) => handleMouseLeave()}
-            className=" leading-[60px] rounded-full  hover:bg-opacity-20"
-          >
-            <a className="pr-4  text-lg hover:text-blue-500">
-              {navlink.service}
-            </a>
-            <div
-              onMouseEnter={handleMenuMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className="top-full z-10 bg-red-600 "
+    <nav
+      className={clsx(
+        "flex items-center fixed top-0 left-0 w-full h-20 transition-transform duration-500 ease-in-out z-50 bg-white",
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      )}
+    >
+      <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-12 w-full">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo Section */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="text-2xl font-bold text-blue-600">
+              MyLogo
+            </Link>
+          </div>
+
+          {/* Center Links */}
+          <div className="hidden md:flex flex-grow justify-center space-x-10">
+            {NavLinks.map((link) => (
+              <Link
+                key={link.id}
+                href="#"
+                className="text-black hover:text-blue-600 px-3 py-2 rounded-md text-lg font-normal border-b-2 border-transparent hover:border-blue-600 transition duration-300"
+              >
+                {link.service}
+              </Link>
+            ))}
+          </div>
+
+          {/* Contact Us on the right */}
+          <button className="hidden md:flex h-12 items-center bg-red-600 rounded-full focus:outline-none shadow-lg hover:scale-105 duration-100">
+            <Link
+              href="#"
+              className="text-white px-3 py-2 rounded-md text-base font-semibold"
             >
-              {hovering === 3 ? (
-                <Menu0 />
-              ) : hovering === 4 ? (
-                <Menu1 />
-              ) : hovering === 4 ? (
-                <Menu2 />
-              ) : null}
-            </div>
-          </li>
-        ))}
-      </ul>
+              Contact Us
+            </Link>
+          </button>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-800 hover:text-blue-600 focus:outline-none"
+            >
+              {isMenuOpen ? "Close" : "Menu"}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            {NavLinks.map((link) => (
+              <Link
+                key={link.id}
+                href="#"
+                className="block text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-lg font-medium border-b-2 border-transparent hover:border-blue-600 transition duration-300"
+              >
+                {link.service}
+              </Link>
+            ))}
+            <Link
+              href="#"
+              className="block text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md text-lg font-medium border-b-2 border-transparent hover:border-blue-600 transition duration-300"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

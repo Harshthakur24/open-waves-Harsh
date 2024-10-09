@@ -65,10 +65,10 @@ export const Form: React.FC<FormProps> = ({ className }) => {
         )}
       >
         <div className="w-full px-4">
-          <p className="mt-8 text-sm font-medium leading-4 text-[#97203E] uppercase tracking-[5px] max-md:mt-10 max-md:mr-0.5 max-md:max-w-full">
+          <p className="mt-12 text-sm font-medium leading-4 text-[#97203E] uppercase tracking-[5px] max-md:mt-10 max-md:mr-0.5 max-md:max-w-full">
             Contact
           </p>
-          <h1 className="mt-4 text-3xl lg:text-5xl font-bold tracking-tighter leading-[50px] text-neutral-800 max-md:mr-0.5 max-md:max-w-full max-md:text-4xl">
+          <h1 className="mt-10 text-3xl lg:text-5xl font-bold tracking-tighter leading-[50px] text-neutral-800 max-md:mr-0.5 max-md:max-w-full max-md:text-4xl">
             Lets get in touch
           </h1>
           <p className="pt-1.5 pb-9 mt-2 text-md lg:text-xl leading-7 text-[#97203E] border-b border-solid border-b-zinc-900 border-b-opacity-20 max-md:mr-0.5 max-md:max-w-full">
@@ -115,7 +115,7 @@ export const Form: React.FC<FormProps> = ({ className }) => {
               </div> */}
             </div>
           </div>
-          <div className="flex flex-col w-full gap-2 lg:gap-4 mt-4 lg:mt-7 ">
+          <div className="flex flex-col w-full gap-3 lg:gap-5 mt-4 lg:mt-7 ">
             <h2 className=" text-base leading-4 text-zinc-900 max-md:mr-0.5 max-md:max-w-full">
               {" "}
               Email{" "}

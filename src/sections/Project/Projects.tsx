@@ -15,11 +15,12 @@ export function Projects() {
         <div className="flex flex-col xl:w-[44%] max-md:ml-0 max-md:w-full">
           <div className="flex z-10 flex-col grow items-center px-16 xl:pb-12 pt-5 mt-14 xl:mt-24 w-full text-xl leading-6 text-zinc-900 text-opacity-80 max-md:px-5 max-md:mt-10 max-md:max-w-full">
             <div className="flex flex-col w-full xl:w-[393px]">
-              <div className="text-sm font-medium text-[#97203E] uppercase tracking-[5px]">
+              <div className="text-sm font-medium text-[#97203E] uppercase ml-2 tracking-[5px]">
                 PROJECTS
               </div>
               <h1 className="mt-4 xl:mt-7 text-5xl font-bold tracking-tighter leading-[56px] text-neutral-800 max-md:text-5xl max-md:leading-14 max-sm:tracking-normal">
-                Showcase of our recognized work
+                Showcase of our{" "}
+                <span className="text-red-600">recognized work</span>
               </h1>
               <div className="mt-4 xl:mt-7 leading-7 max-sm:text-lg">
                 Our collaborative approach ensures that we truly understand our

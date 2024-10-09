@@ -32,7 +32,7 @@ export function AboutArea() {
   // }, [scrollYProgress]);
 
   return (
-    <section className="  pt-52 pb-28 max-sm:pt-14 ">
+    <section className="pt-40 pb-12 max-sm:pt-10 mx-10">
       <div className="max-container 2xl:px-24">
         <div className="w-full flex-col md:flex xl:flex-row xl:items-center justify-between gap-10">
           <div
@@ -40,11 +40,12 @@ export function AboutArea() {
             className="flex flex-col justify-start xl:max-w-96 w-full my-auto text-xl font-medium leading-6 text-zinc-900 text-opacity-80 max-md:mt-10"
           >
             <div className="w-[90%]">
-              <div className="text-sm text-[#97203E] uppercase tracking-[5px] max-sm:whitespace-nowrap max-sm:text-xs">
+              <div className="text-sm text-[#97203E] text-mono text-bold ml-2 uppercase tracking-[5px] max-sm:whitespace-nowrap max-sm:text-xs">
                 CONSULTING EXCELLENCE
               </div>
               <h1 className="mt-8 text-5xl font-bold xl:tracking-tighter leading-[56px] text-neutral-800 max-md:text-4xl max-md:leading-10">
-                Best pathway to our clients.
+                Best pathway to our{" "}
+                <span className="text-red-600">clients.</span>
               </h1>
               <p className="mt-11 leading-7 max-md:mt-10 max-sm:mt-5 max-sm:text-lg">
                 Our consulting process begins with athorough assessment of your
@@ -167,8 +168,8 @@ export function AboutArea() {
                               Discovery and Analysis
                             </h2>
                             <div className="mt-5 text-lg leading-7 text-zinc-900 text-opacity-70">
-                              Perform a analysis of the client's <br /> existing
-                              IT systems.
+                              Perform a analysis of the client&apos;s <br />{" "}
+                              existing IT systems.
                             </div>
                           </div>
                         </div>
