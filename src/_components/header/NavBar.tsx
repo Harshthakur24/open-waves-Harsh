@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import clsx from "clsx";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavLinks = [
   {
@@ -58,7 +59,7 @@ export function NavBar() {
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-blue-600">
-              MyLogo
+              <Image src="/logo.png" alt="contact" width={130} height={34} />
             </Link>
           </div>
 
@@ -68,7 +69,7 @@ export function NavBar() {
               <Link
                 key={link.id}
                 href="#"
-                className="text-black hover:text-blue-600 px-3 py-2 rounded-md text-lg font-normal border-b-2 border-transparent hover:border-blue-600 transition duration-300"
+                className="text-black hover:text-blue-600 px-3 py-2 text-lg font-normal border-transparent hover:border-blue-600 transition duration-300"
               >
                 {link.service}
               </Link>
