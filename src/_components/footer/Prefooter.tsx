@@ -26,7 +26,7 @@ const servicesLinks = [
 
 export function Prefooter() {
   return (
-    <div className=" z-10 flex flex-col gap-20  xl:flex-row xl:justify-between items-center bg-black border-b-[1px] border-opacity-35 border-slate-300 pb-24 max-sm:flex-col">
+    <div className="z-10 flex flex-col gap-16 xl:flex-row xl:justify-between items-center bg-black border-b-[1px] border-opacity-35 border-slate-300 pb-16 max-sm:flex-col mx-10">
       <div className="flex flex-col w-full my-auto max-md:mt-10  xl:justify-center ">
         <Image src="/logo.png" alt="contact" width={171} height={34} />
         <h5 className="mt-10 text-lg leading-7 text-white text-opacity-80">

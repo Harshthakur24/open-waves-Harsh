@@ -6,10 +6,10 @@ import { Prefooter } from "./Prefooter";
 import { footerLinks } from "@/constant";
 export function Footer() {
   return (
-    <section className="bg-black md:pt-24 relative ">
+    <section className="bg-black md:pt-24 relative">
       <div className="max-container">
         <Prefooter />
-        <div className="flex flex-col xl:flex-row border-b-[1px] border-slate-400 border-opacity-60">
+        <div className="flex flex-col xl:flex-row mx-10 border-b-[1px] border-slate-400 border-opacity-60">
           <div className=" hidden md:grid w-full grid-cols-3 xl:grid-cols-5  pb-12 mt-24 font-medium  gap-20  ">
             {footerLinks &&
               footerLinks.map((item, index) => (
