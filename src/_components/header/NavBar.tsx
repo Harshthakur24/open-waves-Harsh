@@ -55,7 +55,7 @@ export function NavBar() {
       )}
     >
       <div className="max-w-7xl mx-auto px-8 sm:px-10 lg:px-12 w-full">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           {/* Logo Section */}
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-blue-600">
